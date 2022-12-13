@@ -10,7 +10,7 @@ export class TodoService {
   private url = 'https://jsonplaceholder.typicode.com/todos';
 
   getTodo(){
-      return this.http.get<Todo>(this.url);
+      return this.http.get<Todo[]>(this.url);
   }
 
   constructor(private http: HttpClient) { }
