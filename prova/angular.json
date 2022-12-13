@@ -3,36 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "prova-pw": {
+    "prova": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "inlineTemplate": true,
-          "inlineStyle": true,
-          "skipTests": true
-        },
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:resolver": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -40,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/prova-pw",
+            "outputPath": "dist/prova",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -91,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "prova-pw:build:production"
+              "browserTarget": "prova:build:production"
             },
             "development": {
-              "browserTarget": "prova-pw:build:development"
+              "browserTarget": "prova:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,13 +75,30 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "prova-pw:build"
+            "browserTarget": "prova:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "afdc8af0-d0a2-4a14-8913-e290615e157a"
+    "analytics": "d88c6d60-debf-4792-8b3a-23a2f3a4a606"
   }
 }
